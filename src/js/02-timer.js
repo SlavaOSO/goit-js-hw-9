@@ -38,6 +38,7 @@ flatpickr(refs.input, options);
 let intervalid = null;
 
 function startTimer() {
+    refs.btnStart.disabled = true;
     intervalid = setInterval(timer, 1000);
     stopTimer();
 }
@@ -51,10 +52,10 @@ function timer () {
     const components = convertMs(delta);
     console.log(components);
     // const date = new Date(Date.parse(refs.input.value) - Date.now());
-            refs.seconds.textContent = convertMs(delta).seconds;
+            refs.seconds.textContent = addLeadingZero(convertMs(delta).seconds);
             refs.minutes.textContent = convertMs(delta).minutes;
             refs.hours.textContent = convertMs(delta).hours;
-            refs.days.textContent = convertMs(delta).days;
+            refs.days.textContent = addLeadingZero(convertMs(delta).days);
     // console.log(delta);
 
 }
