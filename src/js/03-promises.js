@@ -11,8 +11,8 @@ form.addEventListener('submit', onSubmit);
 
 function onSubmit(e) {
   e.preventDefault();
-  for (let position = 0; 1 < amountEl.value; position += 1) {
-    const delay = (position) * stepEl.value + +delayEl.value;
+  for (let position = 1; 1 < amountEl.value; position += 1) {
+    const delay = (position - 1) * stepEl.value + +delayEl.value;
     createPromise(position, delay)
       .then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
