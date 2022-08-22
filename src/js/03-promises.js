@@ -49,7 +49,7 @@ form.addEventListener('submit', onSubmit);
 
 function onSubmit(e) {
   e.preventDefault();
-  const firstDelay = delayEl.value;
+  let firstDelay = delayEl.value;
   const stepDelay = stepEl.value;
   const amountForm = amountEl.value;
   // let delay = 0;
