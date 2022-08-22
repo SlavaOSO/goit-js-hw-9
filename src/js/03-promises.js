@@ -52,7 +52,7 @@ function onSubmit(e) {
   const firstDelay = delayEl.value;
   const stepDelay = stepEl.value;
   const amountForm = amountEl.value;
-  let delay = 0;
+  // let delay = 0;
   // for (let i = 1; i <= amountForm; i++) {
   //   const position = i;
   //   if (i === 1) {
@@ -61,7 +61,7 @@ function onSubmit(e) {
   //     delay += stepDelay;
   //   }
   for (let position = 1; position <= amountForm; position += 1) {
-    delay = (position - 1) * stepDelay + +firstDelay;
+    const delay = (position - 1) * stepDelay + +firstDelay;
     // const delay = (position - 1) * stepEl.value + +delayEl.value;
 
     createPromise(position, delay)
