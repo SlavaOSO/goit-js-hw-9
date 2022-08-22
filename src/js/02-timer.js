@@ -52,10 +52,10 @@ function timer () {
     const components = convertMs(delta);
     console.log(components);
     // const date = new Date(Date.parse(refs.input.value) - Date.now());
-            refs.seconds.textContent = addLeadingZero(convertMs(delta).seconds);
-            refs.minutes.textContent = convertMs(delta).minutes;
-            refs.hours.textContent = convertMs(delta).hours;
-            refs.days.textContent = addLeadingZero(convertMs(delta).days);
+            refs.seconds.textContent = addLeadingZero(components.seconds);
+            refs.minutes.textContent = addLeadingZero(components.minutes);
+            refs.hours.textContent = addLeadingZero(components.hours);
+            refs.days.textContent = addLeadingZero(components.days);
     // console.log(delta);
 
 }
@@ -67,7 +67,9 @@ function stopTimer () {
     }
 }
 
-
+function addLeadingZero(value) {
+  return value.toString().padStart(2, '0');
+}
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
