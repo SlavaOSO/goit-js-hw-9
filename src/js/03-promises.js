@@ -11,13 +11,16 @@ form.addEventListener('submit', onSubmit);
 
 function onSubmit(e) {
   e.preventDefault();
+  const firstDelay = delayEl.value;
+  const stepDelay = stepEl.value;
+  const amountForm = amountEl.value;
   let delay = 0;
-  for (let i = 1; i < amountEl.value; i++) {
+  for (let i = 1; i < amountForm; i++) {
     const position = i;
     if (position === 1) {
-      delay += delayEl.value;
+      delay += firstDelay;
     } else {
-      delay += stepEl.value;
+      delay += stepDelay;
     }
     // const delay = (position - 1) * stepEl.value + +delayEl.value;
 
