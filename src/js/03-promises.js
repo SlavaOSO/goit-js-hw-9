@@ -55,7 +55,7 @@ function onSubmit(e) {
   let delay = 0;
   for (let i = 1; i < amountForm; i++) {
     const position = i;
-    if (position === 1) {
+    if (i === 1) {
       delay += firstDelay;
     } else {
       delay += stepDelay;
